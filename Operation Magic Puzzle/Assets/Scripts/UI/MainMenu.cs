@@ -11,11 +11,26 @@ public class MainMenu : MonoBehaviour
 
     public GameObject creditsPanel;
 
+    public AudioClip playSfx;
+    public AudioClip selectSfx;
+    public AudioSource audioSource;
+
+
     private bool isPanelOn = false;
     private PlayerController playerController;
     private CameraFollow cameraFollow;
 
     // Start is called before the first frame update
+
+    public void PlaySFX()
+    {
+        audioSource.PlayOneShot(playSfx);
+    }
+
+    public void PlaySelectSFX()
+    {
+        audioSource.PlayOneShot(selectSfx);
+    }
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
