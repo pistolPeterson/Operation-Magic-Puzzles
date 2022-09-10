@@ -9,6 +9,11 @@ public class SceneTransition : MonoBehaviour
     private Animator animator;
     private int levelToLoad;
     public int currentLevel;
+
+    public AudioSource audioSource;
+
+    public AudioClip fadeInClip;
+    public AudioClip fadeOutClip;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -55,5 +60,14 @@ public class SceneTransition : MonoBehaviour
         var x = FindObjectOfType<GameplayUI>();
         if (x != null)
             x.SetCurrentLevelText();
+    }
+    public void PlayFadeIn()
+    {
+        audioSource.PlayOneShot(fadeInClip);
+    }
+
+    public void PlayFadeOut()
+    {
+        audioSource.PlayOneShot(fadeOutClip);
     }
 }
