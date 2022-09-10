@@ -12,7 +12,7 @@ public class SceneTransition : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        currentLevel = SceneManager.GetActiveScene().buildIndex;
+        currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     void Update()
@@ -52,5 +52,8 @@ public class SceneTransition : MonoBehaviour
     public void OnFadeComplete()
     {
         //SceneManager.LoadScene(levelToLoad);
+        var x = FindObjectOfType<GameplayUI>();
+        if (x != null)
+            x.SetCurrentLevelText();
     }
 }

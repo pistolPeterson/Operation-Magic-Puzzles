@@ -41,6 +41,7 @@ public class MainMenu : MonoBehaviour
         DisableObjects();
         playerController.UnFreezePlayer();
         cameraFollow.setCanFollow(true);
+        FindObjectOfType<GameplayUI>().SetCurrentLevelText();
 
     }
 
