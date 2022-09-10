@@ -7,7 +7,11 @@ public class Teleporter : MonoBehaviour
     [SerializeField] Transform entry, exit;
     private bool moveToTeleporter = false;
 
-
+    private void Start()
+    {
+        entry = transform.GetChild(0);
+        entry = transform.GetChild(1);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

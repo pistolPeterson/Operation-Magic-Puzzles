@@ -5,9 +5,13 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] Transform target;
-    [SerializeField] float followSpeed;
+    [SerializeField] float followSpeed = 1f;
     private bool canFollow = false;
 
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     private void Update()
     {
         if(canFollow)
