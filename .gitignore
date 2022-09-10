@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+Operation Magic Puzzle/[Ll]ibrary/
+Operation Magic Puzzle/[Tt]emp/
+Operation Magic Puzzle/[Oo]bj/
+Operation Magic Puzzle/[Bb]uild/
+Operation Magic Puzzle/[Bb]uilds/
+Operation Magic Puzzle/[Ll]ogs/
+Operation Magic Puzzle/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -70,3 +70,4 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Operation Magic Puzzle/Library/Artifacts/00/008aa1ccf2e6d32c0afc90af59be1dd2
