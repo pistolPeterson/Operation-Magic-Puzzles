@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    private Transform entry, exit;
+    [SerializeField] private int amountOfUses = 2;
+    [SerializeField] private Transform entry, exit;
     private bool moveToTeleporter = false;
 
     private void Start()
@@ -25,9 +26,10 @@ public class Teleporter : MonoBehaviour
         if (moveToTeleporter)
         {
             Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-            player.transform.position = Vector3.MoveTowards(player.transform.position, entry.position, 15 * Time.deltaTime);
-            if(player.position == entry.position)
+            player.transform.position = Vector3.MoveTowards(player.transform.position, entry.position, 30 * Time.deltaTime);
+            if (player.position == entry.position)
             {
+                amountOfUses--;
                 moveToTeleporter = false;
             }
         }
@@ -35,11 +37,14 @@ public class Teleporter : MonoBehaviour
 
     IEnumerator TeleportPlayer(GameObject player)
     {
-        player.GetComponent<PlayerController>().enabled = false;
+        if (amountOfUses <= 0) yield break;
+
+
+        player.GetComponent<PlayerController>().FreezePlayer();
         player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        moveToTeleporter = true;
-        yield return new WaitForSeconds(2f);
+        moveToTeleporter = true; //sets off moving player to teleport in update function
+        yield return new WaitForSeconds(1.0f);
         player.transform.position = exit.transform.position;
-        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<PlayerController>().UnFreezePlayer();
     }
 }

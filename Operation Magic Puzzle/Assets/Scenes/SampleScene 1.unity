@@ -663,6 +663,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8266853375991495106, guid: 5cb371f761c129f43b45608f7673b386, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266853375991495106, guid: 5cb371f761c129f43b45608f7673b386, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266853375991495106, guid: 5cb371f761c129f43b45608f7673b386, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266853376027091520, guid: 5cb371f761c129f43b45608f7673b386, type: 3}
+      propertyPath: amountOfUses
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266853376027091520, guid: 5cb371f761c129f43b45608f7673b386, type: 3}
+      propertyPath: teleportWaitTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8266853376027091521, guid: 5cb371f761c129f43b45608f7673b386, type: 3}
       propertyPath: m_Name
       value: Teleporter
