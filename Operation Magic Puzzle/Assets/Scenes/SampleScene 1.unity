@@ -539,6 +539,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 2012942975656257621, guid: f22e419d040297440ac0876ac5dbe46e, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012942975656257621, guid: f22e419d040297440ac0876ac5dbe46e, type: 3}
+      propertyPath: m_LinearDrag
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012942975656257621, guid: f22e419d040297440ac0876ac5dbe46e, type: 3}
+      propertyPath: m_AngularDrag
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2012942975656257623, guid: f22e419d040297440ac0876ac5dbe46e, type: 3}
       propertyPath: m_RootOrder
       value: 5
