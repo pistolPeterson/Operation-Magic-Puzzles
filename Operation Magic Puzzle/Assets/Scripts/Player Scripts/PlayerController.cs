@@ -55,7 +55,17 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(0, 0);
         }
+    }
 
+    private void OnEnable()
+    {
+        DialogueController.startDialogue += FreezePlayer;
+        DialogueController.endDialogue += UnFreezePlayer;
 
+    }
+    private void OnDisable()
+    {
+        DialogueController.startDialogue -= FreezePlayer;
+        DialogueController.endDialogue -= UnFreezePlayer;
     }
 }

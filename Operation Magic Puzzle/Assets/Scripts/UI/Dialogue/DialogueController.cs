@@ -11,7 +11,7 @@ public class DialogueController : MonoBehaviour
     public TextMeshProUGUI npcNameText, dialogueText;
     public GameObject dialogueSystem;
 
-    public static event Action endDialogue;
+    public static event Action endDialogue, startDialogue;
 
     private void Start()
     {
@@ -20,6 +20,7 @@ public class DialogueController : MonoBehaviour
 
     public void ActivateDialogue(Dialogue dialogue)
     {
+        startDialogue?.Invoke();
         dialogueSystem.SetActive(true);
         dialogueQueue.Clear();
         foreach(string sentence in dialogue.sentences)
