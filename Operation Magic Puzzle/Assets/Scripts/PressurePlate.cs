@@ -12,6 +12,8 @@ public class PressurePlate : MonoBehaviour
     private GameObject activationObject = null;
     private bool isActivated = false;
 
+    public static event Action activatedAction;
+
     void Start()
     {
 
@@ -23,14 +25,14 @@ public class PressurePlate : MonoBehaviour
 
         if (isCheckingDistance && activationObject != null && !isActivated)
         {
-
-
             float dist = Vector3.Distance(activationObject.transform.position, this.gameObject.transform.position);
             Debug.Log(dist);
             if (dist < 0.1f)
             {
                 Debug.Log("OBJECT IS RIGHT ON TOP");
+                activationObject.GetComponent<Rigidbody2D>().mass = Int32.MaxValue;
                 isActivated = true;
+                activatedAction?.Invoke();
             }
         }
         //if check distance state is on 
@@ -45,7 +47,6 @@ public class PressurePlate : MonoBehaviour
 
         if (collider.gameObject.CompareTag(activationObjectTag))
         {
-            Debug.Log("hit rock");
             //unlock check distance state
             isCheckingDistance = true;
             activationObject = collider.gameObject;

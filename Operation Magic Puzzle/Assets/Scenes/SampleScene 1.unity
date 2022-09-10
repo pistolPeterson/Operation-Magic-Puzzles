@@ -182,7 +182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 8
   m_Sprite: {fileID: 1426440503, guid: 0befc96bc127e944b9b7ab67a0c83457, type: 3}
   m_Color: {r: 0, g: 0.30588236, b: 0.9150943, a: 1}
   m_FlipX: 0
@@ -1769,6 +1769,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8266853376027091520, guid: 5cb371f761c129f43b45608f7673b386, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8266853376027091521, guid: 5cb371f761c129f43b45608f7673b386, type: 3}
       propertyPath: m_Name
       value: Teleporter
