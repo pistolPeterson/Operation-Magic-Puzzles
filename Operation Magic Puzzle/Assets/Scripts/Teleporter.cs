@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    [SerializeField] Transform entry, exit;
+    private Transform entry, exit;
     private bool moveToTeleporter = false;
 
     private void Start()
