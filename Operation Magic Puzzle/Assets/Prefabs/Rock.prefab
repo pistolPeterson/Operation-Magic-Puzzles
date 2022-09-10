@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 2012942975656257623}
   - component: {fileID: 2012942975656257622}
   - component: {fileID: 2012942975656257621}
-  - component: {fileID: 2012942975656257620}
-  - component: {fileID: 2012942975656257624}
+  - component: {fileID: 409218816}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Rock
@@ -99,32 +98,16 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
-  m_LinearDrag: 200
-  m_AngularDrag: 20
+  m_Mass: 10
+  m_LinearDrag: 150
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &2012942975656257620
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2012942975656257619}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.044207096, y: 0.3613748}
-  serializedVersion: 2
-  m_Radius: 0.24285454
---- !u!60 &2012942975656257624
+--- !u!60 &409218816
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +117,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -149,14 +132,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.06267655, y: 0.82469773}
-      - {x: -0.21875, y: 0.75}
-      - {x: -0.54124594, y: 0.5407618}
-      - {x: -0.5247476, y: -0.051760733}
-      - {x: -0.27374434, y: -0.20325479}
-      - {x: -0.006467223, y: -0.35998872}
+    - - {x: -0.19278121, y: 0.6980624}
+      - {x: -0.29701233, y: 0.5778379}
+      - {x: -0.47727728, y: 0.5199137}
+      - {x: -0.48376942, y: -0.023159742}
+      - {x: 0.03444612, y: -0.24026167}
+      - {x: 0.2605623, y: -0.15586299}
       - {x: 0.5, y: -0.09375}
-      - {x: 0.5724804, y: 0.00871861}
-      - {x: 0.5494949, y: 0.21346992}
-      - {x: 0.5467452, y: 0.54425514}
-      - {x: 0.24650681, y: 0.6867565}
+      - {x: 0.48376942, y: 0.5255818}
+      - {x: 0.0073662996, y: 0.7564922}
