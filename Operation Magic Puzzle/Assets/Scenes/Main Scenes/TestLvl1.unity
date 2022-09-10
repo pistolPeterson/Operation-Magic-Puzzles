@@ -1771,6 +1771,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1358209204, guid: 5773a0f996d25554e96d42884b74248f, type: 3}
+      propertyPath: m_Volume
+      value: 0.302
+      objectReference: {fileID: 0}
     - target: {fileID: 5221500462405183042, guid: 5773a0f996d25554e96d42884b74248f, type: 3}
       propertyPath: m_Name
       value: Level Change
