@@ -29,7 +29,6 @@ public class PressurePlate : MonoBehaviour
             Debug.Log(dist);
             if (dist < 0.1f)
             {
-                Debug.Log("OBJECT IS RIGHT ON TOP");
                 activationObject.GetComponent<Rigidbody2D>().mass = Int32.MaxValue;
                 isActivated = true;
                 activatedAction?.Invoke();
@@ -56,7 +55,10 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        isCheckingDistance = false;
-        activationObject = null;
+        if (collider.gameObject.CompareTag(activationObjectTag))
+        {
+            isCheckingDistance = false;
+            activationObject = null;
+        }
     }
 }
