@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(x_input * speed * Time.deltaTime, y_input * speed * Time.deltaTime);
+            if (x_input > 0 && y_input > 0)
+            {
+                //play back right animation
+            }
         }
 
 
