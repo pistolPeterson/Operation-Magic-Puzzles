@@ -9,7 +9,9 @@ public class MainMenu : MonoBehaviour
     public GameObject creditsButton;
     public GameObject AudioButton;
 
+    public GameObject creditsPanel;
 
+    private bool isPanelOn = false;
     private PlayerController playerController;
     private CameraFollow cameraFollow;
 
@@ -19,6 +21,8 @@ public class MainMenu : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
         playerController.FreezePlayer();
         cameraFollow = FindObjectOfType<CameraFollow>();
+
+        creditsPanel.SetActive(isPanelOn);
     }
 
     // Update is called once per frame
@@ -40,7 +44,12 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void ToggleCreditsPanel()
+    {
+        isPanelOn = !isPanelOn;
+        creditsPanel.SetActive(isPanelOn);
 
+    }
     public void DisableObjects()
     {
         playButton.SetActive(false);
