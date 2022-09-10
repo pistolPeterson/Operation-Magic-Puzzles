@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     float x_input;
     float y_input;
 
+    private bool freezePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -24,9 +26,19 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!freezePlayer)
+            MovePlayer();
     }
 
+    public void FreezePlayer()
+    {
+        freezePlayer = true;
+    }
+
+    public void UnFreezePlayer()
+    {
+        freezePlayer = false;
+    }
     void MovePlayer()
     {
         rb.velocity = new Vector2(x_input * speed * Time.deltaTime, y_input * speed * Time.deltaTime);

@@ -11,10 +11,11 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
     private void Update()
     {
-        if(canFollow)
+        if (canFollow)
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, target.transform.position.y, -10f), followSpeed * Time.deltaTime);
     }
 
