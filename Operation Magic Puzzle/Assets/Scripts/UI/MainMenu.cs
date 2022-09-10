@@ -9,10 +9,16 @@ public class MainMenu : MonoBehaviour
     public GameObject creditsButton;
     public GameObject AudioButton;
 
+
+    private PlayerController playerController;
+    private CameraFollow cameraFollow;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        playerController = FindObjectOfType<PlayerController>();
+        playerController.FreezePlayer();
+        cameraFollow = FindObjectOfType<CameraFollow>();
     }
 
     // Update is called once per frame
@@ -28,6 +34,17 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+        DisableObjects();
+        playerController.UnFreezePlayer();
+        cameraFollow.setCanFollow(true);
 
+    }
+
+
+    public void DisableObjects()
+    {
+        playButton.SetActive(false);
+        creditsButton.SetActive(false);
+        AudioButton.SetActive(false);
     }
 }
