@@ -28,7 +28,7 @@ public class Brazier : MonoBehaviour
 
     private void ActivateBrazier()
     {
-        Debug.Log("Activated");
+        brazierEnabled?.Invoke();
     }
     private void NoEffect()
     {
