@@ -10,7 +10,7 @@ public class Teleporter : MonoBehaviour
     private void Start()
     {
         entry = transform.GetChild(0);
-        entry = transform.GetChild(1);
+        exit = transform.GetChild(1);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
