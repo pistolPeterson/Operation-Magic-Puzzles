@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     float y_input;
 
     private bool freezePlayer;
+    private PlayerAnimation playerAnim;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerAnim = FindObjectOfType<PlayerAnimation>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -65,6 +67,25 @@ public class PlayerController : MonoBehaviour
             if (x_input > 0 && y_input > 0)
             {
                 //play back right animation
+                playerAnim.ChangeAnimationState(playerAnim.BACK_RIGHT);
+            }
+
+            if (x_input < 0 && y_input < 0)
+            {
+                //play front left animation
+                playerAnim.ChangeAnimationState(playerAnim.FRONT_LEFT);
+            }
+
+            if (x_input < 0 && y_input > 0)
+            {
+                //play front left animation
+                playerAnim.ChangeAnimationState(playerAnim.BACK_LEFT);
+            }
+
+            if (x_input > 0 && y_input < 0)
+            {
+                //play front left animation
+                playerAnim.ChangeAnimationState(playerAnim.FRONT_RIGHT);
             }
         }
 
