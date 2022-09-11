@@ -27,7 +27,7 @@ public class PressurePlate : MonoBehaviour
         {
             float dist = Vector3.Distance(activationObject.transform.position, this.gameObject.transform.position);
             Debug.Log(dist);
-            if (dist < 0.1f)
+            if (dist < 0.4f)
             {
                 activationObject.GetComponent<Rigidbody2D>().mass = Int32.MaxValue;
                 isActivated = true;

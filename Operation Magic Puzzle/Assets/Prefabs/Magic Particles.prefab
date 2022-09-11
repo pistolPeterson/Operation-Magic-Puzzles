@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5970405779452565846}
   - component: {fileID: 5970405779452565847}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Magic Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
