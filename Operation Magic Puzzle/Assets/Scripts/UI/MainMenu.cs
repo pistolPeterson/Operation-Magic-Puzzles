@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public GameObject titleText;
     public GameObject playButton;
     public GameObject creditsButton;
     public GameObject AudioButton;
@@ -68,6 +68,7 @@ public class MainMenu : MonoBehaviour
     }
     public void DisableObjects()
     {
+        titleText.SetActive(false);
         playButton.SetActive(false);
         creditsButton.SetActive(false);
         AudioButton.SetActive(false);
