@@ -7,6 +7,7 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private int amountOfUses = 2;
     [SerializeField] private Transform entry, exit;
     private bool moveToTeleporter = false;
+    [SerializeField] Sprite activatedSprite;
     private enum TeleporterType { Default, PressurePlate}
     [SerializeField] TeleporterType type;
     private bool isActive = false;
@@ -19,6 +20,7 @@ public class Teleporter : MonoBehaviour
         if(type == TeleporterType.Default)
         {
             isActive = true;
+            entry.gameObject.GetComponent<SpriteRenderer>().sprite = activatedSprite;
         }
     }
 
@@ -48,8 +50,8 @@ public class Teleporter : MonoBehaviour
         if (moveToTeleporter)
         {
             Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-            player.transform.position = Vector3.MoveTowards(player.transform.position, entry.position, 20 * Time.deltaTime);
-            if (player.position == entry.position)
+            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(entry.position.x, entry.position.y - 0.5f, entry.position.z), 20 * Time.deltaTime);
+            if (Vector3.Distance(player.transform.position, entry.position) <= 0.5f)
             {
                 amountOfUses--;
                 moveToTeleporter = false;
@@ -60,6 +62,7 @@ public class Teleporter : MonoBehaviour
     void ActivateTeleporter()
     {
         isActive = true;
+        entry.gameObject.GetComponent<SpriteRenderer>().sprite = activatedSprite;
     }
 
     IEnumerator TeleportPlayer(GameObject player)
@@ -71,7 +74,7 @@ public class Teleporter : MonoBehaviour
         player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         moveToTeleporter = true; //sets off moving player to teleport in update function
         yield return new WaitForSeconds(1.5f);
-        player.transform.position = exit.transform.position;
+        player.transform.position = new Vector3(exit.position.x, exit.position.y - 0.5f, exit.position.z);
         player.GetComponent<PlayerController>().UnFreezePlayer();
     }
 }
