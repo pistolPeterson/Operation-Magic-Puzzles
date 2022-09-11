@@ -7,14 +7,36 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private int amountOfUses = 2;
     [SerializeField] private Transform entry, exit;
     private bool moveToTeleporter = false;
+    private enum TeleporterType { Default, PressurePlate}
+    [SerializeField] TeleporterType type;
+    private bool isActive = false;
+
     private void Start()
     {
         entry = transform.GetChild(0);
         exit = transform.GetChild(1);
+
+        if(type == TeleporterType.Default)
+        {
+            isActive = true;
+        }
     }
+
+    private void OnEnable()
+    {
+        PressurePlate.activatedAction += ActivateTeleporter;
+    }
+
+    private void OnDisable()
+    {
+        PressurePlate.activatedAction -= ActivateTeleporter;
+    }
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && isActive)
         {
             StartCoroutine(TeleportPlayer(collision.gameObject));
         }
@@ -35,9 +57,9 @@ public class Teleporter : MonoBehaviour
         }
     }
 
-    void setActive()
+    void ActivateTeleporter()
     {
-        //isActive = true;
+        isActive = true;
     }
 
     IEnumerator TeleportPlayer(GameObject player)

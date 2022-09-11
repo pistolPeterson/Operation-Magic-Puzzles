@@ -5,15 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float speed = 200f;
+    private float speed = 150f;
     float x_input;
     float y_input;
 
     private bool freezePlayer;
+    private PlayerAnimation playerAnim;
+    public bool isNearRock = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        isNearRock = false;
+        playerAnim = FindObjectOfType<PlayerAnimation>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -65,6 +69,37 @@ public class PlayerController : MonoBehaviour
             if (x_input > 0 && y_input > 0)
             {
                 //play back right animation
+                if (isNearRock)
+                    playerAnim.ChangeAnimationState(playerAnim.PUSHING_BR);
+                else
+                    playerAnim.ChangeAnimationState(playerAnim.BACK_RIGHT);
+            }
+
+            if (x_input < 0 && y_input < 0)
+            {
+                //play front left animation
+                if (isNearRock)
+                    playerAnim.ChangeAnimationState(playerAnim.PUSHING_FL);
+                else
+                    playerAnim.ChangeAnimationState(playerAnim.FRONT_LEFT);
+            }
+
+            if (x_input < 0 && y_input > 0)
+            {
+                //play front left animation
+                if (isNearRock)
+                    playerAnim.ChangeAnimationState(playerAnim.PUSHING_BL);
+                else
+                    playerAnim.ChangeAnimationState(playerAnim.BACK_LEFT);
+            }
+
+            if (x_input > 0 && y_input < 0)
+            {
+                //play front left animation
+                if (isNearRock)
+                    playerAnim.ChangeAnimationState(playerAnim.PUSHING_FR);
+                else
+                    playerAnim.ChangeAnimationState(playerAnim.FRONT_RIGHT);
             }
         }
 
