@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -2043647866, guid: 0befc96bc127e944b9b7ab67a0c83457, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.10016346, a: 1}
+  m_Sprite: {fileID: -333955257, guid: eaed59df64767594b9bf2b85fd0cab4c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,8 +134,10 @@ MonoBehaviour:
   dialogue:
     npcName: Teacher
     sentences:
-    - Test
-    - Test2
+    - "Hello, my pupil! So you have decided to begin your journey for your magical
+      exam.  You will be challenged to use your beginner magician's spells to solve
+      puzzles around you, I hope you have come prepared!\t"
+    - Step into the teleporter when you are ready, and we shall begin your journey.
 --- !u!58 &567834125618410219
 CircleCollider2D:
   m_ObjectHideFlags: 0
