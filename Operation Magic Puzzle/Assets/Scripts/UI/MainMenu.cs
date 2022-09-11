@@ -25,6 +25,7 @@ public class MainMenu : MonoBehaviour
     public void PlaySFX()
     {
         audioSource.PlayOneShot(playSfx);
+
     }
 
     public void PlaySelectSFX()
@@ -67,5 +68,6 @@ public class MainMenu : MonoBehaviour
         playButton.SetActive(false);
         creditsButton.SetActive(false);
         AudioButton.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 }

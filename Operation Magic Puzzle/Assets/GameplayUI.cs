@@ -32,6 +32,6 @@ public class GameplayUI : MonoBehaviour
         currentLevelObj.SetActive(true);
         var scene = FindObjectOfType<SceneTransition>();
         if (scene != null)
-            currentLevelText.text = "Level " + scene.currentLevel + "/5 ";
+            currentLevelText.text = "Level " + scene.currentLevel + " ";
     }
 }

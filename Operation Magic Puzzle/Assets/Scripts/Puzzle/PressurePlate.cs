@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 public class PressurePlate : MonoBehaviour
 {
-    public static event Action pressurePlatePressed;
     public string activationObjectTag = "Rock";
 
 

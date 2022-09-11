@@ -5,7 +5,7 @@ using UnityEngine;
 public class RockAnimActivator : MonoBehaviour
 {
 
-    private bool isPushing = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class RockAnimActivator : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            isPushing = true;
+
             FindObjectOfType<PlayerController>().isNearRock = true;
         }
 
@@ -33,7 +33,7 @@ public class RockAnimActivator : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             FindObjectOfType<PlayerController>().isNearRock = false;
-            isPushing = false;
+
         }
 
     }

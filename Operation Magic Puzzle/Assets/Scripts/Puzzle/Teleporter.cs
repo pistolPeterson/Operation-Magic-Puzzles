@@ -70,7 +70,8 @@ public class Teleporter : MonoBehaviour
     void ActivateTeleporter()
     {
         isActive = true;
-        entry.gameObject.GetComponent<SpriteRenderer>().sprite = activatedSprite;
+        if (entry != null)
+            entry.gameObject.GetComponent<SpriteRenderer>().sprite = activatedSprite;
     }
 
     IEnumerator TeleportPlayer(GameObject player)
