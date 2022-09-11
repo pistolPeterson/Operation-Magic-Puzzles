@@ -8,7 +8,7 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private Transform entry, exit;
     private bool moveToTeleporter = false;
     [SerializeField] Sprite activatedSprite;
-    private enum TeleporterType { Default, PressurePlate}
+    private enum TeleporterType { Default, PressurePlate, TeacherDialogue}
     [SerializeField] TeleporterType type;
     private bool isActive = false;
 
@@ -27,6 +27,9 @@ public class Teleporter : MonoBehaviour
     private void OnEnable()
     {
         PressurePlate.activatedAction += ActivateTeleporter;
+        if (type == TeleporterType.TeacherDialogue) {
+            DialogueController.endDialogue += ActivateTeleporter;
+        }
     }
 
     private void OnDisable()
