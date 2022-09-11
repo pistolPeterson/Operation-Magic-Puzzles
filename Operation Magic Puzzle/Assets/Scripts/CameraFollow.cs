@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     private Transform target;
     private float followSpeed = 3f;
-    private bool canFollow = false;
+    [SerializeField] bool canFollow = false;
     private Animator anim;
 
     private void Start()
