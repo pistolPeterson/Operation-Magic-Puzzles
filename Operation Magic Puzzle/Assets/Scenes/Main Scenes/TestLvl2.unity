@@ -735,11 +735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 567834125618410213, guid: 809cbd3436cc41a4baa98843ada150a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4913259
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 567834125618410213, guid: 809cbd3436cc41a4baa98843ada150a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7658803
+      value: 2.96
       objectReference: {fileID: 0}
     - target: {fileID: 567834125618410213, guid: 809cbd3436cc41a4baa98843ada150a9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -776,6 +776,15 @@ PrefabInstance:
     - target: {fileID: 567834125618410217, guid: 809cbd3436cc41a4baa98843ada150a9, type: 3}
       propertyPath: m_Name
       value: Teacher
+      objectReference: {fileID: 0}
+    - target: {fileID: 567834125618410218, guid: 809cbd3436cc41a4baa98843ada150a9, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "Not every teleporter will always be active...\t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 567834125618410218, guid: 809cbd3436cc41a4baa98843ada150a9, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: You must find the respective puzzle that activates the portal it so
+        that you may proceed.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 809cbd3436cc41a4baa98843ada150a9, type: 3}
@@ -43821,7 +43830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221500462405183042, guid: 5773a0f996d25554e96d42884b74248f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5221500462405183043, guid: 5773a0f996d25554e96d42884b74248f, type: 3}
       propertyPath: m_RootOrder
