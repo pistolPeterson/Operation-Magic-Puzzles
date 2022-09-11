@@ -8,16 +8,20 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private Transform entry, exit;
     private bool moveToTeleporter = false;
     [SerializeField] Sprite activatedSprite;
-    private enum TeleporterType { Default, PressurePlate, TeacherDialogue}
+    private enum TeleporterType { Default, PressurePlate, TeacherDialogue }
     [SerializeField] TeleporterType type;
     private bool isActive = false;
+
+    [SerializeField] private AudioSource audioSource;
+    public AudioClip entrySFX;
+    public AudioClip exitSFX;
 
     private void Start()
     {
         entry = transform.GetChild(0);
         exit = transform.GetChild(1);
 
-        if(type == TeleporterType.Default)
+        if (type == TeleporterType.Default)
         {
             isActive = true;
             entry.gameObject.GetComponent<SpriteRenderer>().sprite = activatedSprite;
@@ -27,7 +31,8 @@ public class Teleporter : MonoBehaviour
     private void OnEnable()
     {
         PressurePlate.activatedAction += ActivateTeleporter;
-        if (type == TeleporterType.TeacherDialogue) {
+        if (type == TeleporterType.TeacherDialogue)
+        {
             DialogueController.endDialogue += ActivateTeleporter;
         }
     }
@@ -71,12 +76,12 @@ public class Teleporter : MonoBehaviour
     IEnumerator TeleportPlayer(GameObject player)
     {
         if (amountOfUses <= 0) yield break;
-
-
+        audioSource.PlayOneShot(entrySFX);
         player.GetComponent<PlayerController>().FreezePlayer();
         player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         moveToTeleporter = true; //sets off moving player to teleport in update function
         yield return new WaitForSeconds(1.5f);
+        audioSource.PlayOneShot(exitSFX);
         player.transform.position = new Vector3(exit.position.x - 1f, exit.position.y - 1f, exit.position.z);
         player.GetComponent<PlayerController>().UnFreezePlayer();
     }
