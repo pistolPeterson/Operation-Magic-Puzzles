@@ -40,11 +40,6 @@ public class MainMenu : MonoBehaviour
         creditsPanel.SetActive(isPanelOn);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
 
     //will remove all main menu UI Elements 
@@ -55,7 +50,7 @@ public class MainMenu : MonoBehaviour
     {
         DisableObjects();
         playerController.UnFreezePlayer();
-        cameraFollow.setCanFollow(true);
+        cameraFollow.StartCoroutine(cameraFollow.CanFollow());
         FindObjectOfType<GameplayUI>().SetCurrentLevelText();
 
     }

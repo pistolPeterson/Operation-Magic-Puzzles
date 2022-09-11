@@ -53,8 +53,8 @@ public class Teleporter : MonoBehaviour
         if (moveToTeleporter)
         {
             Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(entry.position.x, entry.position.y - 0.5f, entry.position.z), 20 * Time.deltaTime);
-            if (Vector3.Distance(player.transform.position, entry.position) <= 0.5f)
+            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(entry.position.x - 1f, entry.position.y - 1f, entry.position.z), 20 * Time.deltaTime);
+            if (Vector3.Distance(player.transform.position, entry.position) <= 1.5f)
             {
                 amountOfUses--;
                 moveToTeleporter = false;
@@ -77,7 +77,7 @@ public class Teleporter : MonoBehaviour
         player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         moveToTeleporter = true; //sets off moving player to teleport in update function
         yield return new WaitForSeconds(1.5f);
-        player.transform.position = new Vector3(exit.position.x, exit.position.y - 0.5f, exit.position.z);
+        player.transform.position = new Vector3(exit.position.x - 1f, exit.position.y - 1f, exit.position.z);
         player.GetComponent<PlayerController>().UnFreezePlayer();
     }
 }
