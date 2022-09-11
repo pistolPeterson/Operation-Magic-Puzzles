@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     private Transform target;
-    private float followSpeed = 3f;
+    private float followSpeed = 5f;
     [SerializeField] bool canFollow = false;
     private Animator anim;
 
