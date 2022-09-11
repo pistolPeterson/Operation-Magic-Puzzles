@@ -45,22 +45,15 @@ public class PlayerController : MonoBehaviour
     }
     void MovePlayer()
     {
-        // rb.velocity = new Vector2(x_input * speed * Time.deltaTime, y_input * speed * Time.deltaTime);
-        //forces 4 directional movement 
         if (x_input != 0 && y_input == 0)
         {
-            //do nothing
-            //rb.velocity = new Vector2(x_input * speed * Time.deltaTime, 0);
+                
         }
         else if (y_input != 0 && x_input == 0)
         {
-            //do nothing
-            //rb.velocity = new Vector2(x_input * speed * Time.deltaTime, 0);
         }
         else if (y_input == 0 && x_input == 0)
         {
-            //do nothing
-            //rb.velocity = new Vector2(x_input * speed * Time.deltaTime, 0);
             rb.velocity = new Vector2(0, 0);
         }
         else
