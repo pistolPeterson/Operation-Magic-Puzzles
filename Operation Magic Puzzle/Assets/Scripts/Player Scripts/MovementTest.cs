@@ -29,34 +29,29 @@ public class MovementTest : MonoBehaviour
         
         Vector3Int gridMovement = new Vector3Int();
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             gridMovement.x += 1;
-        }else if (Input.GetKey(KeyCode.S))
+        }
+        if (Input.GetKeyDown(KeyCode.S))
         {
             gridMovement.x -= 1;
-        }else if (Input.GetKey(KeyCode.A))
+        }
+        if (Input.GetKeyDown(KeyCode.A))
         {
             gridMovement.y += 1;
-        }else if (Input.GetKey(KeyCode.D))
+        } 
+        if (Input.GetKeyDown(KeyCode.D))
         {
             gridMovement.y -= 1;
         }
-        else
-        {
-            _targetPosition = transform.position;
-        }
 
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        if (input != Vector2.zero)
+        if (gridMovement != Vector3Int.zero)
         {
-            if (gridMovement != Vector3Int.zero)
-            {
-                _targetCell += gridMovement;
-                _targetPosition = grid.CellToWorld(_targetCell);
-            }
-            MoveToward(_targetPosition);
-        }    
+            _targetCell += gridMovement;
+            _targetPosition = grid.CellToWorld(_targetCell);
+        }
+        MoveToward(_targetPosition);
     }
 
     private void MoveToward(Vector3 target)
