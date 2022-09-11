@@ -11,6 +11,11 @@ public class PlayerAnimation : MonoBehaviour
     public string FRONT_LEFT = "FrontLeft";
     public string FRONT_RIGHT = "FrontRight";
 
+    public string PUSHING_BL = "PushBL";
+    public string PUSHING_BR = "PushBR";
+    public string PUSHING_FL = "PushFL";
+    public string PUSHING_FR = "PushFR";
+
     [SerializeField] Animator animator;
     private string currentState;
     // Start is called before the first frame update
@@ -30,5 +35,6 @@ public class PlayerAnimation : MonoBehaviour
         if (currentState == newState) return;
 
         animator.Play(newState);
+        Debug.Log(newState);
     }
 }

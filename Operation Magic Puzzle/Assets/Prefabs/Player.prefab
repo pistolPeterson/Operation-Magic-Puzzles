@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34fd73012c16904aaa4687621f99638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNearRock: 0
 --- !u!212 &2917879737893307144
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -259,4 +260,8 @@ MonoBehaviour:
   BACK_RIGHT: BackRight
   FRONT_LEFT: FrontLeft
   FRONT_RIGHT: FrontRight
+  PUSHING_BL: PushBL
+  PUSHING_BR: PushBR
+  PUSHING_FL: PushFL
+  PUSHING_FR: PushFR
   animator: {fileID: 6924831977368303335}
